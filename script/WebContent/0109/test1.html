@@ -8,17 +8,37 @@
 
 <script type="text/javascript">
 $(function(){
-	$("body").append("<ul></ul>");
 	
+	//body태그에 ul태크를 추가하라.
+	//$("#div1").append("<ul></ul>");
+	
+	//appendTo는 앞뒤를 바꿈
+	$("<ul></ul>").appendTo("#div1");
+	
+	/* for(var i=0; i<4; i++){
+		$("#div1 ul").append("<li>클릭</li>");
+	} */
 	for(var i=0; i<4; i++){
-		$("body ul").appendChild("<li>클릭</li>");
+		$("<li>클릭</li>").appendTo("#div1 ul");
 	}
+	
+	//div1에 ul에 li에  클릭이벤트 발생시 alert 발생
+	$("#div1 ul li").each(function(i){
+		$(this).click(function(){
+			alert(i+1+"번째 클릭");
+		})
+	});
 });
 
 
 </script>
 </head>
 <body>
+
+<div id="div1">
+
+</div>
+
 
 </body>
 </html>
