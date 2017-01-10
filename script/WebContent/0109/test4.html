@@ -16,15 +16,20 @@
 	}); */
 
 		//클릭시
-		$("#div1").bind("click", function() {
+		/* $("#div1").bind("click", function() {
+			alert("안녕하세요");
+		}); */
+		//bind대신 on을 사용할 것을 
+		권장
+		$("#div1").on("click", function() {
 			alert("안녕하세요");
 		});
-	
+
 		//마우스 올렸을때
 		$("#div1").bind("mouseover", function() {
 			$(this).css("background", "green");
 		});
-		
+
 		//마우스가 나갔을때
 		$("#div1").bind("mouseout", function() {
 			$(this).css("background", "none");
